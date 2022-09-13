@@ -5,7 +5,7 @@
   connection: ssh
   tasks:
          - name: Docker build image
-           command: docker build -t docker-ansible /root/jenkins-Ansible-Docker
+           command: docker build -t docker-ansible /root/AnsibleDocker
 
          - name: Dcoekr run
            command: docker run -d --name docker-app -p 80:80 docker-ansible
