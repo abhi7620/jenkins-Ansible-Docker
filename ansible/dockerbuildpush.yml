@@ -1,0 +1,18 @@
+---
+- name: Docker Build and Push
+  hosts: Node
+  become: yes
+  connection: ssh
+  tasks:
+         - name: Docker build image
+           command: docker build -t docker-ansible /root/jenkins-Ansible-Docker
+
+         - name: Dcoekr run
+           command: docker run -d --name docker-app -p 80:80 docker-ansible
+
+         - name: Dcoker tag
+           command: docker tag docker-ansible abhidockerhub7620/crudoperstion:docker-ansible-demo
+
+         - name: Docker Push
+           command: docker push abhidockerhub7620/crudoperstion:docker-ansible-demo       
+

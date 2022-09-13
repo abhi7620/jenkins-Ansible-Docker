@@ -1,0 +1,17 @@
+---
+- name: Copy Files
+  hosts: Node
+  become: yes
+  connection: ssh
+  tasks:
+         - name: Create folder 
+           file:
+             path: /root/test
+             state: directory
+             mode: '0755' 
+         - name: Copy Foleder
+           copy:
+              src: /root/jenkins-Ansible-Docker
+              dest: /root
+              mode: 777      
+
