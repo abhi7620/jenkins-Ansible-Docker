@@ -1,0 +1,7 @@
+# Import play book
+- name: Install Docker
+  import_playbook: dockerinstall.yml 
+- name: Copy Files
+  import_playbook: copyansible.yml
+- name: Dcoekr build and push
+  import_playbook: dockerbuildpush.yml 
