@@ -7,9 +7,10 @@ node("ansiblenode") {
         checkout scm
     }
   stage('Ansible'){
-    ansiblePlaybook(
+     sh 'ansible-playbook -i DynamicInventory.py /root/jenkins/workspace/AnsibleDocker/ansible/site.yml' 
+    /*ansiblePlaybook(
       playbook: 'ansible-playbook -i DynamicInventory.py /root/jenkins/workspace/AnsibleDocker/ansible/site.yml' 
-    )
+    )*/
   }  
   
   
