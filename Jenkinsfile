@@ -8,7 +8,7 @@ node("ansiblenode") {
     }
   stage('Ansible'){
     ansiblePlaybook(
-      playbook: '/root/jenkins-Ansible-Docker/ansible/site.yml' 
+      playbook: 'ansible-playbook -i DynamicInventory.py /root/jenkins/workspace/AnsibleDocker/ansible/site.yml' 
     )
   }  
   
