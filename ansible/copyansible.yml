@@ -11,7 +11,7 @@
              mode: '0755' 
          - name: Copy Foleder
            copy:
-              src: /root/jenkins-Ansible-Docker
+              src: /root/jenkins/workspace/
               dest: /root
               mode: 777      
 
